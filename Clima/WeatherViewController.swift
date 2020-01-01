@@ -17,7 +17,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     //Constants
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
-    let APP_ID = "b1b15e88fa797225412429c1c50c122a1"
+    let APP_ID = "b6907d289e10d714a6e88b30761fae22"
     /***Get your own App ID at https://openweathermap.org/appid ****/
     
 
@@ -52,6 +52,19 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     //Write the getWeatherData method here:
     func getWeatherData(url : String , parameters : [String : String]){
         
+        Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
+            response in
+            if response.result.isSuccess {
+                print("Success!! Got the Weather Data")
+                let weatherJSON :JSON = JSON(response.result.value!)
+                print(weatherJSON)
+            }
+            else{
+                print("Error \(String(describing: response.result.error))")
+                self.cityLabel.text = "Check your  Connection"
+            }
+        }
+        
     }
 
     
@@ -64,7 +77,9 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
    
     
     //Write the updateWeatherData method here:
-    
+    func updateWeatherData (json : JSON){
+        
+    }
 
     
     
