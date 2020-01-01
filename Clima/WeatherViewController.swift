@@ -16,7 +16,7 @@ import SVProgressHUD
 class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     //Constants
-    let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
+    let WEATHER_URL = "https://samples.openweathermap.org/data/2.5/weather"
     let APP_ID = "b6907d289e10d714a6e88b30761fae22"
     /***Get your own App ID at https://openweathermap.org/appid ****/
     
