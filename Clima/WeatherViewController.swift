@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  WeatherApp
 //
-//  Created by Vaibhav Bist on 01/01/2020.
+//  Created by Vaibhav Bisht on 01/01/2020.
 //  Copyright (c) 2020 Coding Blocks. All rights reserved.
 //
 
