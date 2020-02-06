@@ -2,21 +2,23 @@
 //  ChangeCityViewController.swift
 //  WeatherApp
 //
-//  Created by Angela Yu on 23/08/2015.
-//  Copyright (c) 2015 London App Brewery. All rights reserved.
+//  Created by Vaibhav Bisht on 01/01/2020.
+//  Copyright (c) 2020 Coding Blocks. All rights reserved.
 //
 
 import UIKit
 
 
 //Write the protocol declaration here:
-
+protocol changeCityDelegate {
+    func userEnteredNewCityName (city : String)
+}
 
 
 class ChangeCityViewController: UIViewController {
     
     //Declare the delegate variable here:
-
+    var delegate : changeCityDelegate?
     
     //This is the pre-linked IBOutlets to the text field:
     @IBOutlet weak var changeCityTextField: UITextField!
@@ -28,13 +30,13 @@ class ChangeCityViewController: UIViewController {
         
         
         //1 Get the city name the user entered in the text field
-        
+        let cityName = changeCityTextField.text!
         
         //2 If we have a delegate set, call the method userEnteredANewCityName
-        
+        delegate?.userEnteredNewCityName(city: cityName)
         
         //3 dismiss the Change City View Controller to go back to the WeatherViewController
-        
+        self.dismiss(animated: true, completion: nil)
         
     }
     
