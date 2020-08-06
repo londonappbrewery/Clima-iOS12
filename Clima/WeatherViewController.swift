@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation // Swift 5 doesn't allow mutiple Inheritance 
 
 
 class WeatherViewController: UIViewController {
